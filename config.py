@@ -1,0 +1,4 @@
+token = '5674965777:AAEewSrE2kM-ju6QSRz-IGd3xOF-ls4qy6o'
+admin = 435372356
+chanel1 = '-1001231084327'
+chanel2 = '-1001231084327'

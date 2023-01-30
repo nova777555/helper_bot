@@ -3,7 +3,7 @@ from create_bot import bot, dp
 from aiogram.dispatcher import FSMContext
 from handlers.main_handler import FSMmain
 from aiogram.dispatcher.filters import Text
-from aiogram.exceptions import TelegramRetryAfter
+from aiogram.utils.exceptions import RetryAfter
 from data import message_dict
 from config import admin
 from keyboards.mailing_keyboards import kb_add_button
@@ -88,7 +88,7 @@ async def send_mailing(state: FSMContext, mailing_id:str):
         user_id = user[0]
         try:
             await send_mes(bot, user_id, admin, id, kb)
-        except TelegramRetryAfter as e:
+        except RetryAfter as e:
             await asyncio.sleep(e.retry_after)
             return await send_mes(bot, user_id, admin, id, kb)
 
